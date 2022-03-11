@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:3000/api
+
+@resourceName=students
+
+# Students
+
+# @name getAllStudents
+
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterStudent
+
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name pagination
+
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=10
+
+###
+
+# @name addNewStudents
+
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "name": "Anh Duong"
+}
+
+###
+
+# @name updateStudent
+
+PATCH {{baseUrl}}/{{resourceName}}/JzAwLaY
+Content-Type: application/json
+
+{
+    "name": "Duy Hung"
+}
+
+###
+
+# @name removeStudent
+
+DELETE {{baseUrl}}/{{resourceName}}/JzAwLaY

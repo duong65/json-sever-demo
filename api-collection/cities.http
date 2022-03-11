@@ -1,0 +1,37 @@
+@baseUrl=http://localhost:3000/api
+
+@resourceName=cities
+
+# Cities
+
+# @name getAllCities
+
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name addNewCities
+
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "name": "HCM"
+}
+
+###
+
+# @name updateCity
+
+PATCH {{baseUrl}}/{{resourceName}}/D8srjiH
+Content-Type: application/json
+
+{
+    "name": "HN"
+}
+
+###
+
+# @name removeCity
+
+DELETE {{baseUrl}}/{{resourceName}}/D8srjiH
