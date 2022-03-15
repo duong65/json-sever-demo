@@ -26,6 +26,8 @@ const randomCityList = (n) => {
       id: casual.uuid,
       code: casual.state_abbr,
       name: casual.state,
+      title: casual.title,
+      description: casual.description,
       createdAt: Date.now(),
       updatedAt: Date.now(),
     };
@@ -46,9 +48,13 @@ const randomUserList = (cityList, numberOfUsers) => {
     Array.from(new Array(numberOfUsers)).forEach(() => {
       const user = {
         id: casual.uuid,
-        name: casual.name,
+        name: casual.full_name,
         gender: casual.random_element(["male", "female"]),
         age: casual.integer((from = 18), (to = 26)),
+        email: casual.email,
+        phone: casual.phone,
+        address: casual.address1,
+        company: casual.company_name + " " + casual.company_suffix,
         salary: casual.integer((from = 800), (to = 8000)),
         description: casual.short_description,
         cityCode: city.code,
@@ -67,8 +73,8 @@ const randomUserList = (cityList, numberOfUsers) => {
 
 (() => {
   // random data
-  const cityList = randomCityList(6);
-  const userList = randomUserList(cityList, 8);
+  const cityList = randomCityList(8);
+  const userList = randomUserList(cityList, 10);
 
   // prepare DB Object
   const db = {
